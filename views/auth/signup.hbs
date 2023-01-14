@@ -4,15 +4,21 @@
   <form action="/signup" method="POST">
  
     <label> Email
-      <input type="email" name="email" placeholder="email" />
+      <input type="email" name="email" placeholder="email" value="{{email}}" required />
     </label>
  
     <label> Password
-      <input type="password" name="password" placeholder="********" />
+      <input type="password" name="password" placeholder="********" value="{{password}}" required />
     </label>
- 
+
     <button type="submit">Create account</button>
  
     {{!-- error message will be added here --}}
+    {{#if errorMessage}}
+      <dir>
+        <h3 style="color: red;">{{errorMessage}}</h3>
+      </dir>
+    {{/if}}
+
   </form>
 </div>

@@ -7,6 +7,7 @@ const userSchema = new Schema(
       type: String,
       //second parameter here is a custom error message
       required: [true,"Email is required"],
+      match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address.'],
       unique: true,
       lowercase: true,
       trim: true
